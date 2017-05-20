@@ -16,3 +16,5 @@ tests/report/
 
 myenv/
 db.sqlite3
+.vscode/
+.idea/
