@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Training generator{% endblock %}
+
+{% block content %}
+    {% if is_generated %}
+        Your exercises:<br>
+        {% for exercise in exercises %}
+            {{ exercise.name }}<br>
+        {% endfor %}
+    {% else %}
+        <form action="{% url 'fitlife:training' %}" method="post">
+            {% csrf_token %}
+            Sex:<br>
+            <input type="radio" name="sex" value="male"> Male<br>
+            <input type="radio" name="sex" value="female"> Female<br><br>
+            Target:<br>
+            <input type="radio" name="target" value="massgain"> Mass gain<br>
+            <input type="radio" name="target" value="reduction"> Reduction<br><br>
+            <input type="submit" value="Generate">
+        </form>
+    {% endif %}
+{% endblock %}
