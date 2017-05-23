@@ -3,19 +3,35 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
+from .forms import LoginForm
 
 def login_view(request):
+    # if request.method == "POST":
+    #     username = request.POST['username']
+    #     password = request.POST['password']
+    #     user = authenticate(request, username=username, password=password)
+    #     if user is not None:
+    #         login(request, user)
+    #         return HttpResponseRedirect(reverse('home'))
+    #     else:
+    #         return HttpResponse('Log in error!')
+    # else:
+    #     return render(request, 'loginuser/login.html')
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse('home'))
-        else:
-            return HttpResponse('Log in error!')
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('home'))
+            else:
+                return HttpResponse('Log in error!')
     else:
-        return render(request, 'loginuser/login.html')
+        form = LoginForm()
+        
+    return render(request, 'loginuser/login.html', {'form':form})
 
 def register_view(request):
     if request.method == "POST":
