@@ -5,11 +5,7 @@
 {% block content %}
     <form action="{% url 'loginuser:register' %}" method="post">
         {% csrf_token %}
-        First name: <input type="text" name="firstname"><br><br>
-        Last name: <input type="text" name="lastname"><br><br>
-        E-mail: <input type="email" name="email"><br><br>
-        Username: <input type="text" name="username"><br><br>
-        Password: <input type="password" name="password"><br><br>
+        {{ form.as_p }}
         <input type="submit" value="Register">
     </form>
 {% endblock %}
