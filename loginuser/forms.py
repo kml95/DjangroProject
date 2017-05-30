@@ -5,7 +5,7 @@ class LoginForm(forms.Form):
     username = forms.CharField(label='Username', max_length=100)
     password = forms.CharField(widget=forms.PasswordInput, label="Password", max_length=100)
 
-    patternUsername = re.compile("^[a-z0-9]+$")
+    patternUsername = re.compile("^[a-zA-Z0-9]+$")
     patternPassword = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
     
     def clean_username(self):
@@ -39,8 +39,8 @@ class RegisterForm(forms.Form):
 
     patternFirstName = re.compile("^[A-Z][a-zA-Z]+$")
     patternLastName = re.compile("^[A-Z][a-zA-Z]+$")
-    patternEmail = re.compile("^[a-zA-Z]+[@][a-z]+[.][a-z]+$")
-    patternUsername = re.compile("^[a-z0-9]+$")
+    patternEmail = re.compile("^[a-zA-Z0-9]+[@][a-z]+[.][a-z]+$")
+    patternUsername = re.compile("^[a-zA-Z0-9]+$")
     patternPassword = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
     
     def clean_firstname(self):

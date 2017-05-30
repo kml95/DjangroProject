@@ -6,17 +6,6 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .forms import LoginForm, RegisterForm
 
 def login_view(request):
-    # if request.method == "POST":
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    #     user = authenticate(request, username=username, password=password)
-    #     if user is not None:
-    #         login(request, user)
-    #         return HttpResponseRedirect(reverse('home'))
-    #     else:
-    #         return HttpResponse('Log in error!')
-    # else:
-    #     return render(request, 'loginuser/login.html')
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -30,8 +19,9 @@ def login_view(request):
                 return HttpResponse('Log in error!')
     else:
         form = LoginForm()
-        
+
     return render(request, 'loginuser/login.html', {'form':form})
+
 
 def register_view(request):
     # if request.method == "POST":

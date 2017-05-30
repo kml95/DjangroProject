@@ -20,3 +20,21 @@ def training_view(request):
             'is_generated': is_generated,
         }
         return render(request, 'fitlife/training.html', context)
+
+def calculator_view(request):
+    if request.method == "POST":
+        is_counted = True
+        weight = int(request.POST['waga'])
+        height = int(request.POST['wzrost'])
+        wynik = (weight * height) / 2
+        context = {
+            'is_counted': is_counted,
+            'wynik': wynik,
+        }
+        return render(request, 'fitlife/calculator.html', context)
+    else:
+        is_counted = False
+        context = {
+            'is_counted': is_counted,
+        }
+        return render(request, 'fitlife/calculator.html', context)
