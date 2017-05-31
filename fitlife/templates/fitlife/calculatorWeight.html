@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Calculate your ideal weight{% endblock %}
+
+{% block content %}
+    {% if is_counted%}
+        Your ideal weight:<br><br>
+        minimum weight: {{ minimalna|floatformat:2 }}<br>
+        by Broc'a: {{ Broca }}<br>
+        by Potton'a: {{ Pottona }}<br>
+        by Lorentza'a: {{ Lorentza }}<br>
+        maxiumum weight: {{ maksymalna|floatformat:2 }}<br><br>
+        <form action="{% url 'fitlife:calculatorWeight' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Count again" name="count_again">
+        </form>
+    {% else %}
+        <form action="{% url 'fitlife:calculatorWeight' %}" method="post">
+            {% csrf_token %}
+            Calculate your ideal weight:<br><br>
+            Sex:
+            <input type="radio" name="sex" value="male"> Male
+            <input type="radio" name="sex" value="female"> Female<br>
+            Height:
+            <input type="text" name="height" > <br><br>
+            <input type="submit" value="Count" name="count">
+        </form>
+    {% endif %}
+{% endblock %}

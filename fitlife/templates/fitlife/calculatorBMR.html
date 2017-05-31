@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}CalculatorBMR{% endblock %}
+
+{% block content %}
+    {% if is_counted%}
+        Your BMR is about {{ result }} calories per day.<br><br>
+        <form action="{% url 'fitlife:calculatorBMR' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Count again" name="count_again">
+        </form>
+    {% else %}
+        <form action="{% url 'fitlife:calculatorBMR' %}" method="post">
+            {% csrf_token %}
+            Calculator BMR:<br>
+            Sex:
+            <input type="radio" name="sex" value="male"> Male
+            <input type="radio" name="sex" value="female"> Female<br>
+            Age:
+            <input type="text" name="age" ><br>
+            Weight:
+            <input type="text" name="weight" > <br>
+            Height:
+            <input type="text" name="height" > <br><br>
+            <input type="submit" value="Count" name="count">
+        </form>
+    {% endif %}
+{% endblock %}
