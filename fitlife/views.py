@@ -98,3 +98,6 @@ def calculatorWeight_view(request):
             'is_counted': is_counted,
         }
     return render(request, 'fitlife/calculatorWeight.html', context)
+
+def films_view(request):    
+    return render(request, 'fitlife/films.html')
