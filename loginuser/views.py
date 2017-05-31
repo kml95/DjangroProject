@@ -50,7 +50,7 @@ def register_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 def confirm_view(request,username,code):
     user=User.objects.get(username=username)
