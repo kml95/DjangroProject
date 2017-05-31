@@ -3,7 +3,8 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import Exercise
+from .models import Exercise, Products,Types
+
 
 def training_view(request):
     if request.method == "POST":
@@ -99,6 +100,7 @@ def calculatorWeight_view(request):
         }
     return render(request, 'fitlife/calculatorWeight.html', context)
 
+<<<<<<< Updated upstream
 def films_view(request):    
     return render(request, 'fitlife/films.html')
 
@@ -133,3 +135,22 @@ def trainingplan_view(request):
 
 def calculators_view(request):
     return render(request, 'fitlife/calculators.html')
+=======
+def products_view(request):
+    if request.method == "POST":
+        if request.POST.get("back"):
+            types=Types.objects.all()
+            context = { 'types':types }
+            return render(request, 'fitlife/products.html', context)
+        else:
+            type = request.POST['type']
+            typeo = Types.objects.get(typical=type)
+            products=Products.objects.filter(typical=typeo)
+            context = { 'products':products,'type':type }
+            return render(request, 'fitlife/products.html', context)
+    
+    else:
+        types=Types.objects.all()
+        context = { 'types':types }
+        return render(request, 'fitlife/products.html', context)
+>>>>>>> Stashed changes

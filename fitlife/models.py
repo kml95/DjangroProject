@@ -21,3 +21,15 @@ class TrainingBreakExercise(models.Model):
     series = models.DecimalField(null = True, decimal_places=0, max_digits=2)
     def __str__(self):
         return self.exercise.__str__ + " " + self.training_break.__str__
+
+class Types(models.Model):
+    typical = models.CharField(max_length=50, null=True)
+    def __str__(self):
+        return self.typical
+
+class Products(models.Model):
+    name = models.CharField(max_length=50, null=True)
+    typical = models.ForeignKey(Types, on_delete=models.CASCADE, null=True)
+    def __str__(self):
+        return self.name
+

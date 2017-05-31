@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Products {% endblock %}
+
+{% block content %}
+    
+<form action="{% url 'fitlife:products' %}" method="post">
+    {% csrf_token %}
+
+                
+            
+                 
+    {% if type %}
+            
+         {%for product in products %}
+
+          <label for="product.name">{{product.name}}</label><br>
+           
+            
+            {% endfor %} 
+             
+            <input type="submit" name="back" value="back">
+    {%else%}
+
+         
+         {% for type in types %}
+
+         <input type="radio" name="type" value="{{ type.typical }}" checked="checked" > {{ type.typical }}<br>
+
+         {% endfor %}
+
+         <input type="submit" value="generate">
+         {% endif %}
+
+            
+</form>
+
+{% endblock %}
