@@ -101,3 +101,32 @@ def calculatorWeight_view(request):
 
 def films_view(request):    
     return render(request, 'fitlife/films.html')
+
+def trainingplan_view(request):
+    if request.method == "POST":
+        if request.POST.get("count_again"):
+            return render(request, 'fitlife/trainingplan.html')
+        else:      
+            is_counted = True
+            trainingvalue = 0
+            sex = request.POST['sex']
+            if sex == "male":
+                target = request.POST['target']
+                if target == "strength":
+                    trainingvalue = 1
+                else:
+                    trainingvalue = 2
+            else:
+                target = request.POST['target']
+                if target == "strength":
+                    trainingvalue = 3
+                else:
+                    trainingvalue = 4
+
+            context = {
+                'is_counted': is_counted,
+                'trainingvalue': trainingvalue,
+            }
+            return render(request, 'fitlife/trainingplan.html', context)
+    else:
+        return render(request, 'fitlife/trainingplan.html')

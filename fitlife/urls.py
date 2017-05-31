@@ -9,4 +9,5 @@ urlpatterns = [
     url('^calculatorBMR/$', views.calculatorBMR_view, name='calculatorBMR'),
     url('^calculatorWeight/$', views.calculatorWeight_view, name='calculatorWeight'),
     url('^films/$', views.films_view, name='films'),
+    url('^trainingplan/$', views.trainingplan_view, name='trainingplan'),
 ]
