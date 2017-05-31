@@ -135,7 +135,6 @@ def trainingplan_view(request):
 def calculators_view(request):
     return render(request, 'fitlife/calculators.html')
 
-<<<<<<< Updated upstream
 def products_view(request):
     if request.method == "POST":
         if request.POST.get("back"):
@@ -153,7 +152,7 @@ def products_view(request):
         types=Types.objects.all()
         context = { 'types':types }
         return render(request, 'fitlife/products.html', context)
-=======
+
 def dietplan_view(request):
     if request.method == "POST":
         if request.POST.get("count_again"):
@@ -241,4 +240,4 @@ def dietplan_view(request):
             return render(request, 'fitlife/dietplan.html', context)
     else:
         return render(request, 'fitlife/dietplan.html')
->>>>>>> Stashed changes
+

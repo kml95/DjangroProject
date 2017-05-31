@@ -4,20 +4,20 @@
 
 {% block content %}
     {% if is_counted%}
-        Your daily kcal equals {{ kcal }} kcal.<br><br>
+        Your daily kcal equals {{ kcal|floatformat:0 }} kcal.<br><br>
         Yours macronutrients:<br>
-        protein: {{ protein }} grams<br>
-        carbo: {{ carbo }} grams<br>
-        fat: {{ fat }} grams<br><br>
+        protein: {{ protein|floatformat:0 }} grams<br>
+        carbo: {{ carbo|floatformat:0 }} grams<br>
+        fat: {{ fat|floatformat:0 }} grams<br><br>
         Yours macronutrients per meal:<br>
-        protein: {{ proteinpermeal }} grams<br>
-        carbo: {{ carbopermeal }} grams<br>
-        fat: {{ fatpermeal }} grams<br><br>
+        protein: {{ proteinpermeal|floatformat:0 }} grams<br>
+        carbo: {{ carbopermeal|floatformat:0 }} grams<br>
+        fat: {{ fatpermeal|floatformat:0 }} grams<br><br>
         Products which you can use to plan your meal:<br>
-        <a href=""
+        <a href="/fitlife/products/">Our products</a>
         <form action="{% url 'fitlife:trainingplan' %}" method="post">
             {% csrf_token %}
-            <input type="submit" name="count_again" value="Generate Again">
+            <br><input type="submit" name="count_again" value="Generate Again">
         </form>
     {% else %}
         <form action="{% url 'fitlife:dietplan' %}" method="post">
