@@ -5,24 +5,33 @@
 {% block content %}
     {% if is_counted%}
         {% if wynik > 25 %}
-            Result: {{ wynik|floatformat:2 }}<br>
-            Unfortunately, you are overweight!
+            <h4>Result: {{ wynik|floatformat:2 }}<br>
+            Unfortunately, you are overweight!</h4>
         {% elif wynik < 18 %}
-            Result: {{ wynik|floatformat:2 }}<br>
-            Unfortunately, you are underweight!
+            <h4>Result: {{ wynik|floatformat:2 }}<br>
+            Unfortunately, you are underweight!</h4>
         {% else %}
-            Result: {{ wynik|floatformat:2 }}<br>
-            Congratulations, the value is correct!
+            <h4>Result: {{ wynik|floatformat:2 }}<br>
+            Congratulations, your weight is good for your height!</h4>
         {% endif %}
     {% else %}
-        <form action="{% url 'fitlife:calculatorBMI' %}" method="post">
+        <form action="{% url 'fitlife:calculatorBMI' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            Calculator BMI:<br>
-            Input weight in kg:
-            <input type="text" name="waga" ><br>
-            Input height in cm:
-            <input type="text" name="wzrost" > <br><br>
-            <input type="submit" value="Count">
+            <h3>Calculator BMI:</h3>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Weight (kg)</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="waga"  placeholder="Weigth">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Height (cm)</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="wzrost"  placeholder="Height">
+                </div>
+            </div>
+            
+            <input type="submit" value="Count" class="btn btn-default">
         </form>
     {% endif %}
 {% endblock %}

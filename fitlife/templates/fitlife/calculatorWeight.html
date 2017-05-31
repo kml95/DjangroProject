@@ -4,26 +4,56 @@
 
 {% block content %}
     {% if is_counted%}
-        Your ideal weight:<br><br>
-        minimum weight: {{ minimalna|floatformat:2 }}<br>
-        by Broc'a: {{ Broca }}<br>
-        by Potton'a: {{ Pottona }}<br>
-        by Lorentza'a: {{ Lorentza }}<br>
-        maxiumum weight: {{ maksymalna|floatformat:2 }}<br><br>
-        <form action="{% url 'fitlife:calculatorWeight' %}" method="post">
+        <h3>Your ideal weight</h3><br />
+
+        <table class="table">
+            <tr>
+                <td>Minimum weight</td>
+                <td>{{ minimalna|floatformat:2 }}</td>
+            </tr>
+            <tr>
+                <td>by Broc</td>
+                <td>{{ Broca }}</td>
+            </tr>
+            <tr>
+                <td>by Potton</td>
+                <td>{{ Pottona }}</td>
+            </tr>
+            <tr>
+                <td>by Lorentza</td>
+                <td>{{ Lorentza }}</td>
+            </tr>
+            <tr>
+                <td>Maxiumum weight</td>
+                <td>{{ maksymalna|floatformat:2 }}</td>
+            </tr>
+        </table>
+        <form action="{% url 'fitlife:calculatorWeight' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            <input type="submit" value="Count again" name="count_again">
+            <input type="submit" value="Count again" name="count_again" class="btn btn-default">
         </form>
     {% else %}
-        <form action="{% url 'fitlife:calculatorWeight' %}" method="post">
+        <form action="{% url 'fitlife:calculatorWeight' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            Calculate your ideal weight:<br><br>
-            Sex:
-            <input type="radio" name="sex" value="male"> Male
-            <input type="radio" name="sex" value="female"> Female<br>
-            Height:
-            <input type="text" name="height" > <br><br>
-            <input type="submit" value="Count" name="count">
+            <h3>Calculate your ideal weight</h3>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Sex</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" name="sex" value="male"> Male
+                            <input type="radio" name="sex" value="female"> Female<br>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Height</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="height"  placeholder="Height">
+                </div>
+            </div>
+            <input type="submit" value="Count" name="count" class="btn btn-default">
         </form>
     {% endif %}
 {% endblock %}

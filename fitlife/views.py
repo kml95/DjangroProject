@@ -130,3 +130,6 @@ def trainingplan_view(request):
             return render(request, 'fitlife/trainingplan.html', context)
     else:
         return render(request, 'fitlife/trainingplan.html')
+
+def calculators_view(request):
+    return render(request, 'fitlife/calculators.html')

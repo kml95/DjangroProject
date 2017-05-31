@@ -15,14 +15,14 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand active" href="#">FitLife</a>
+          <a class="navbar-brand active" href="/">FitLife</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Database</a></li>
+            <li><a href="/fitlife/calculators/">Calculators</a></li>
+            <li><a href="/fitlife/films/">Videos</a></li>
+            <li><a href="#">Diet</a></li>
+            <li><a href="#">Training</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %} 
@@ -41,6 +41,7 @@
     	  <h1>FitLife</h1>
     	  <h2>Real men factory</h2>
       </div>
+      <hr>
       <div class="col-lg-8 mainFeed">
 	      {% block content %} {% endblock %}
       </div>
