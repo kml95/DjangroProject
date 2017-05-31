@@ -4,25 +4,47 @@
 
 {% block content %}
     {% if is_counted%}
-        Your BMR is about {{ result }} calories per day.<br><br>
-        <form action="{% url 'fitlife:calculatorBMR' %}" method="post">
+        <h4>Your BMR is about {{ result }} calories per day.</h4>
+        <form action="{% url 'fitlife:calculatorBMR' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            <input type="submit" value="Count again" name="count_again">
+            <input type="submit" value="Count again" name="count_again" class="btn btn-default">
         </form>
     {% else %}
-        <form action="{% url 'fitlife:calculatorBMR' %}" method="post">
+
+        <form action="{% url 'fitlife:calculatorBMR' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            Calculator BMR:<br>
-            Sex:
-            <input type="radio" name="sex" value="male"> Male
-            <input type="radio" name="sex" value="female"> Female<br>
-            Age:
-            <input type="text" name="age" ><br>
-            Weight:
-            <input type="text" name="weight" > <br>
-            Height:
-            <input type="text" name="height" > <br><br>
-            <input type="submit" value="Count" name="count">
+            <h3>Calculator BMR</h3>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Sex</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" name="sex" value="male"> Male
+                            <input type="radio" name="sex" value="female"> Female<br>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Age</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="age"  placeholder="Age">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Weight</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="weight"  placeholder="Weight">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Height</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="height"  placeholder="Height">
+                </div>
+            </div>
+            <input type="submit" value="Count" name="count" class="btn btn-default">
         </form>
+
     {% endif %}
 {% endblock %}

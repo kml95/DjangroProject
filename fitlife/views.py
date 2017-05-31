@@ -101,3 +101,6 @@ def calculatorWeight_view(request):
 
 def films_view(request):    
     return render(request, 'fitlife/films.html')
+
+def calculators_view(request):
+    return render(request, 'fitlife/calculators.html')
