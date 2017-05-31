@@ -39,7 +39,7 @@ class RegisterForm(forms.Form):
 
     patternFirstName = re.compile("^[A-Z][a-zA-Z]+$")
     patternLastName = re.compile("^[A-Z][a-zA-Z]+$")
-    patternEmail = re.compile("^[a-zA-Z0-9]+[@][a-z]+[.][a-z]+$")
+    patternEmail = re.compile("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")   
     patternUsername = re.compile("^[a-zA-Z0-9]+$")
     patternPassword = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
     
@@ -65,16 +65,16 @@ class RegisterForm(forms.Form):
 
         return data
 
-    def clean_email(self):
-        data = self.cleaned_data['email']
+    # def clean_email(self):
+    #     data = self.cleaned_data['email']
 
-        if not self.patternEmail.match(data):
-            raise forms.ValidationError("Wrong email! Insert correct email, for example('jankowalski@wp.pl')")
+    #     if not self.patternEmail.match(data):
+    #         raise forms.ValidationError("Wrong email! Insert correct email, for example('jankowalski@wp.pl')")
         
-        if len(data) < 3:
-            raise forms.ValidationError("Too short username! Miniumum 3 signs.")
+    #     if len(data) < 3:
+    #         raise forms.ValidationError("Too short username! Miniumum 3 signs.")
 
-        return data    
+    #     return data    
 
     def clean_username(self):
         data = self.cleaned_data['username']
