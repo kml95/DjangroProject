@@ -1,0 +1,223 @@
+[
+  {
+    "model": "fitlife.types",
+    "pk": 1,
+    "fields": {
+      "typical": "Carbo"
+    }
+  },
+  {
+    "model": "fitlife.types",
+    "pk": 2,
+    "fields": {
+      "typical": "Protein"
+    }
+  },
+  {
+    "model": "fitlife.types",
+    "pk": 3,
+    "fields": {
+      "typical": "Fat"
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 1,
+    "fields": {
+      "name": "rice",
+      "typical": 1
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 2,
+    "fields": {
+      "name": "whole-grain pasta",
+      "typical": 1
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 3,
+    "fields": {
+      "name": "potatoes",
+      "typical": 1
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 4,
+    "fields": {
+      "name": "oatmeal",
+      "typical": 1
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 5,
+    "fields": {
+      "name": "millet",
+      "typical": 1
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 6,
+    "fields": {
+      "name": "eggs",
+      "typical": 2
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 7,
+    "fields": {
+      "name": "chicken",
+      "typical": 2
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 8,
+    "fields": {
+      "name": "beaf",
+      "typical": 2
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 9,
+    "fields": {
+      "name": "salmon",
+      "typical": 2
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 10,
+    "fields": {
+      "name": "tuna",
+      "typical": 2
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 11,
+    "fields": {
+      "name": "olive oil",
+      "typical": 3
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 12,
+    "fields": {
+      "name": "nuts",
+      "typical": 3
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 13,
+    "fields": {
+      "name": "pistachios",
+      "typical": 3
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 14,
+    "fields": {
+      "name": "peanut butter",
+      "typical": 3
+    }
+  },
+  {
+    "model": "fitlife.products",
+    "pk": 15,
+    "fields": {
+      "name": "egg yolk",
+      "typical": 3
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 1,
+    "fields": {
+      "name": "Barbell Bench Press",
+      "sex": "male"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 2,
+    "fields": {
+      "name": "Chest Dip",
+      "sex": "male"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 3,
+    "fields": {
+      "name": "Wide Grip Pull Up",
+      "sex": "male"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 4,
+    "fields": {
+      "name": "Deadlift",
+      "sex": "male"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 5,
+    "fields": {
+      "name": "One Arm Dumbbell Row",
+      "sex": "male"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 6,
+    "fields": {
+      "name": "Sit up",
+      "sex": "female"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 7,
+    "fields": {
+      "name": "Lying Floor Leg Raise",
+      "sex": "female"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 8,
+    "fields": {
+      "name": "Deep Squat",
+      "sex": "female"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 9,
+    "fields": {
+      "name": "Standing Cable Hamstring Curl",
+      "sex": "female"
+    }
+  },
+  {
+    "model": "fitlife.exercise",
+    "pk": 10,
+    "fields": {
+      "name": "Standing Dumbbell Curl",
+      "sex": "feemale"
+    }
+  }
+]

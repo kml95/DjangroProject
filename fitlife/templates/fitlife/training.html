@@ -4,19 +4,21 @@
 
 {% block content %}
     {% if is_generated %}
-        Your exercises:<br>
+        Sample exercises:<br><br>
         {% for exercise in exercises %}
             {{ exercise.name }}<br>
         {% endfor %}
+        <br>
+        <form action="{% url 'fitlife:training' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Generate again" name="again">
+        </form>
     {% else %}
         <form action="{% url 'fitlife:training' %}" method="post">
             {% csrf_token %}
             Sex:<br>
             <input type="radio" name="sex" value="male"> Male<br>
             <input type="radio" name="sex" value="female"> Female<br><br>
-            Target:<br>
-            <input type="radio" name="target" value="massgain"> Mass gain<br>
-            <input type="radio" name="target" value="reduction"> Reduction<br><br>
             <input type="submit" value="Generate">
         </form>
     {% endif %}

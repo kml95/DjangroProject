@@ -19,17 +19,17 @@
             
             {% endfor %} 
              
-            <input type="submit" name="back" value="back">
+            <br><input type="submit" name="back" value="back">
     {%else%}
 
          
          {% for type in types %}
 
-         <input type="radio" name="type" value="{{ type.typical }}" checked="checked" > {{ type.typical }}<br>
+         <input type="radio" name="type" value="{{ type.typical }}"> {{ type.typical }}<br>
 
          {% endfor %}
 
-         <input type="submit" value="generate">
+         <br><input type="submit" value="generate">
          {% endif %}
 
             

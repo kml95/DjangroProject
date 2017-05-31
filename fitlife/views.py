@@ -8,13 +8,20 @@ from .models import Exercise, Products,Types
 
 def training_view(request):
     if request.method == "POST":
-        is_generated = True
-        exercises = Exercise.objects.all()
-        context = {
-            'is_generated': is_generated,
-            'exercises': exercises,
-        }
-        return render(request, 'fitlife/training.html', context)
+        if request.POST.get("again"):
+            return render(request, 'fitlife/training.html')
+        else:
+            is_generated = True
+            sex = request.POST['sex']
+            if sex == 'male':
+                exercises = Exercise.objects.filter(sex="male")
+            else: 
+                exercises = Exercise.objects.filter(sex="female")
+            context = {
+                    'is_generated': is_generated,
+                    'exercises': exercises,
+            } 
+            return render(request, 'fitlife/training.html', context)
     else:
         is_generated = False
         context = {
