@@ -100,7 +100,6 @@ def calculatorWeight_view(request):
         }
     return render(request, 'fitlife/calculatorWeight.html', context)
 
-<<<<<<< Updated upstream
 def films_view(request):    
     return render(request, 'fitlife/films.html')
 
@@ -135,7 +134,7 @@ def trainingplan_view(request):
 
 def calculators_view(request):
     return render(request, 'fitlife/calculators.html')
-=======
+
 def products_view(request):
     if request.method == "POST":
         if request.POST.get("back"):
@@ -153,4 +152,3 @@ def products_view(request):
         types=Types.objects.all()
         context = { 'types':types }
         return render(request, 'fitlife/products.html', context)
->>>>>>> Stashed changes
