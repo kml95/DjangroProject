@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Diet plan generator{% endblock %}
+
+{% block content %}
+    {% if is_counted%}
+        Your daily kcal equals {{ kcal }} kcal.<br><br>
+        Yours macronutrients:<br>
+        protein: {{ protein }} grams<br>
+        carbo: {{ carbo }} grams<br>
+        fat: {{ fat }} grams<br><br>
+        Yours macronutrients per meal:<br>
+        protein: {{ proteinpermeal }} grams<br>
+        carbo: {{ carbopermeal }} grams<br>
+        fat: {{ fatpermeal }} grams<br><br>
+        Products which you can use to plan your meal:<br>
+        <a href=""
+        <form action="{% url 'fitlife:trainingplan' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" name="count_again" value="Generate Again">
+        </form>
+    {% else %}
+        <form action="{% url 'fitlife:dietplan' %}" method="post">
+            {% csrf_token %}
+            Weight:
+            <input type="text" name="weight"> <br><br>
+            Daily activity:<br>
+            <input type="radio" name="activity" value="low"> Low<br>
+            <input type="radio" name="activity" value="medium">Medium<br>
+            <input type="radio" name="activity" value="high"> High<br><br>
+            Target:<br>
+            <input type="radio" name="target" value="mass"> mass<br>
+            <input type="radio" name="target" value="reduction">reduction<br><br>
+            <input type="submit" value="Generate">
+        </form>
+    {% endif %}
+{% endblock %}

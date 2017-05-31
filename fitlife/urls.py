@@ -11,5 +11,6 @@ urlpatterns = [
     url('^films/$', views.films_view, name='films'),
     url('^calculators/$', views.calculators_view, name='calculators'),
     url('^trainingplan/$', views.trainingplan_view, name='trainingplan'),
-    url ('^products/$', views.products_view, name='products')
+    url ('^products/$', views.products_view, name='products'),
+    url('^dietplan/$', views.dietplan_view, name='dietplan'),
 ]

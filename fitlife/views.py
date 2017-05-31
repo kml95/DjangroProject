@@ -135,6 +135,7 @@ def trainingplan_view(request):
 def calculators_view(request):
     return render(request, 'fitlife/calculators.html')
 
+<<<<<<< Updated upstream
 def products_view(request):
     if request.method == "POST":
         if request.POST.get("back"):
@@ -152,3 +153,92 @@ def products_view(request):
         types=Types.objects.all()
         context = { 'types':types }
         return render(request, 'fitlife/products.html', context)
+=======
+def dietplan_view(request):
+    if request.method == "POST":
+        if request.POST.get("count_again"):
+            return render(request, 'fitlife/dietplan.html')
+        else:      
+            is_counted = True
+            dietValue = 0
+            target = request.POST['target']
+            activity = request.POST['activity']
+            weight = int(request.POST['weight'])
+            if target == "mass":
+                if activity == "low":
+                    kcal = weight*25*1.2+300
+                    carbo = kcal/8
+                    protein = kcal/16
+                    fat = kcal/36
+                    carbopermeal = carbo/5
+                    proteinpermeal = protein/5
+                    fatpermeal = fat/5
+
+                    dietValue = 1
+                elif activity == "medium":
+                    kcal = weight*25*1.5+300
+                    carbo = kcal/8
+                    protein = kcal/16
+                    fat = kcal/36
+                    carbopermeal = carbo/5
+                    proteinpermeal = protein/5
+                    fatpermeal = fat/5
+
+                    dietValue = 2
+                else:
+                    kcal = weight*25*1.7+300
+                    carbo = kcal/8
+                    protein = kcal/16
+                    fat = kcal/36
+                    carbopermeal = carbo/5
+                    proteinpermeal = protein/5
+                    fatpermeal = fat/5
+
+                    dietValue = 3
+            else:
+                if activity == "low":
+                    kcal = weight*25*1.2-300
+                    carbo = kcal/8
+                    protein = kcal/16
+                    fat = kcal/36
+                    carbopermeal = carbo/5
+                    proteinpermeal = protein/5
+                    fatpermeal = fat/5
+
+                    dietValue = 4
+                elif activity == "medium":
+                    kcal = weight*25*1.5-300
+                    carbo = kcal/8
+                    protein = kcal/16
+                    fat = kcal/36
+                    carbopermeal = carbo/5
+                    proteinpermeal = protein/5
+                    fatpermeal = fat/5
+
+                    dietValue = 5
+                else:
+                    kcal = weight*25*1.7-300
+                    carbo = kcal/8
+                    protein = kcal/16
+                    fat = kcal/36
+                    carbopermeal = carbo/5
+                    proteinpermeal = protein/5
+                    fatpermeal = fat/5
+
+                    dietValue = 6
+
+            context = {
+                'is_counted': is_counted,
+                'dietValue': dietValue,
+                'kcal': kcal,
+                'carbo': carbo,
+                'protein': protein,
+                'fat': fat,
+                'carbopermeal': carbopermeal,
+                'proteinpermeal': proteinpermeal,
+                'fatpermeal': fatpermeal,
+            }
+            return render(request, 'fitlife/dietplan.html', context)
+    else:
+        return render(request, 'fitlife/dietplan.html')
+>>>>>>> Stashed changes
