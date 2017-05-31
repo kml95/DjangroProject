@@ -2,8 +2,8 @@ from django import forms
 import re
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=100)
-    password = forms.CharField(widget=forms.PasswordInput, label="Password", max_length=100)
+    username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder':'Username', 'class' : 'form-control'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password', 'class' : 'form-control'}))
 
     patternUsername = re.compile("^[a-zA-Z0-9]+$")
     patternPassword = re.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
@@ -31,11 +31,11 @@ class LoginForm(forms.Form):
         return data
 
 class RegisterForm(forms.Form):
-    firstname = forms.CharField(label='First name', max_length=100)
-    lastname = forms.CharField(label="Last Name", max_length=100)
-    email = forms.CharField(label="Email", max_length=100)
-    username = forms.CharField(label="Username", max_length=100)
-    password = forms.CharField(widget=forms.PasswordInput, label="Password", max_length=100)
+    firstname = forms.CharField(label='First name', max_length=100, widget=forms.TextInput(attrs={'placeholder':'First name', 'class' : 'form-control'}))
+    lastname = forms.CharField(label="Last Name", max_length=100, widget=forms.TextInput(attrs={'placeholder':'Last name', 'class' : 'form-control'}))
+    email = forms.CharField(label="Email", max_length=100, widget=forms.TextInput(attrs={'placeholder':'e-mail', 'class' : 'form-control'}))
+    username = forms.CharField(label="Username", max_length=100, widget=forms.TextInput(attrs={'placeholder':'Username', 'class' : 'form-control'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password', 'class' : 'form-control'}), label="Password", max_length=100)
 
     patternFirstName = re.compile("^[A-Z][a-zA-Z]+$")
     patternLastName = re.compile("^[A-Z][a-zA-Z]+$")
