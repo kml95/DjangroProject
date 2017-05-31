@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Suplementation{% endblock %}
+
+{% block content %}
+    {% if suplementationvalue %}
+        {% if suplementationvalue == 1 %}
+   Suplementacja dzienna:
+   <br>- Creatine (monohydrat) before/after training 5g
+   <br>- Bcaa before/after training 5g
+   <br>- AAKG Before training 30min 4caps
+   <br>- Cytruline Before training mixed with AAKG 5caps
+   <br>- Witamins after wake up 1caps
+   <br>- Minerals before sleep 1caps
+   <br>- Protein whey after training 40g
+        {% elif suplementationvalue == 2 %}
+  <br> - Witamins after wake up 1caps
+  <br> - Minerals before sleep 1caps
+  <br> - Protein whey after training 40g
+  <br> - Creatine (monohydrat) before/after training 5g
+    {% endif %}
+<br>
+<br>
+    <form action="{% url 'fitlife:suplementation' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" name="count_again" value="Generate Again">
+    </form>
+    {% else %}
+
+    <form action="{% url 'fitlife:suplementation' %}" method="post" >
+        {% csrf_token %}
+        Your experience:<br>
+        <input type="radio" name="experience" value="Beginner" > Begginer<br>
+        <input type="radio" name="experience" value="Professional"> Professional<br><br>
+        <input type="submit" value="Generate" checked="checked">
+    </form>
+    {% endif %}
+{% endblock %}

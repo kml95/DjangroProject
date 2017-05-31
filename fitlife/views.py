@@ -247,3 +247,24 @@ def dietplan_view(request):
             return render(request, 'fitlife/dietplan.html', context)
     else:
         return render(request, 'fitlife/dietplan.html')
+
+def suplementation_view(request):
+    if request.method == "POST":
+        if request.POST.get("count_again"):
+            return render(request, 'fitlife/suplementation.html')
+        else: 
+            is_counted = True
+            suplementationvalue = 0
+            experience = request.POST['experience']
+            if experience == "Beginner":
+                suplementationvalue = 2
+            else:
+                suplementationvalue = 1
+
+            context = {
+                'is_counted': is_counted,
+                'suplementationvalue': suplementationvalue,
+            }
+            return render(request, 'fitlife/suplementation.html', context)
+    else:
+        return render(request, 'fitlife/suplementation.html')
