@@ -247,4 +247,3 @@ def dietplan_view(request):
             return render(request, 'fitlife/dietplan.html', context)
     else:
         return render(request, 'fitlife/dietplan.html')
-

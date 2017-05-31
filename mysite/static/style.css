@@ -4,6 +4,7 @@
 
 body {
 	padding-top: 50px;
+	height:100vh;
 }
 
 .dupa {
@@ -18,9 +19,13 @@ body {
 	color: white;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
 
-.mainFeed {
-	/*background-color: gray;*/
+.calculators {
+	width: 200px;
 }
 
 .navbar {

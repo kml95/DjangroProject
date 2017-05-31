@@ -15,23 +15,47 @@
         fat: {{ fatpermeal|floatformat:0 }} grams<br><br>
         Products which you can use to plan your meal:<br>
         <a href="/fitlife/products/">Our products</a>
-        <form action="{% url 'fitlife:trainingplan' %}" method="post">
+        <form action="{% url 'fitlife:trainingplan' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            <br><input type="submit" name="count_again" value="Generate Again">
+            <div class="text-center">
+                <input type="submit" name="count_again" value="Generate Again" class="btn btn-default">
+            </div>
         </form>
     {% else %}
-        <form action="{% url 'fitlife:dietplan' %}" method="post">
+        <form action="{% url 'fitlife:dietplan' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            Weight:
-            <input type="text" name="weight"> <br><br>
-            Daily activity:<br>
-            <input type="radio" name="activity" value="low"> Low<br>
-            <input type="radio" name="activity" value="medium">Medium<br>
-            <input type="radio" name="activity" value="high"> High<br><br>
-            Target:<br>
-            <input type="radio" name="target" value="mass"> mass<br>
-            <input type="radio" name="target" value="reduction">reduction<br><br>
-            <input type="submit" value="Generate">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Weight</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" name="weight"  placeholder="Weight">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Daily activity</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" name="activity" value="low" checked="checked"> Low<br>
+                            <input type="radio" name="activity" value="medium"> Medium<br>
+                            <input type="radio" name="activity" value="high"> High<br>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Target</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" name="target" value="mass" checked="checked"> Mass<br>
+                            <input type="radio" name="target" value="reduction"> Reduction<br>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Generate" class="btn btn-default">
+            </div>
         </form>
     {% endif %}
 {% endblock %}
