@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h2>News</h2><br />
+
+{% for entry in news %}
+
+<div class="news-post">
+    <h3>{{ entry.title }}</h3>
+    <p class="news-post-meta">{{ entry.posted_date|date:"H:i Y.m.d" }}</p><hr>
+    <p>{{ entry.text|safe }}</p>
+</div>    
+{% endfor  %}
+
+
+
+
+  <!--
+    <script type="text/javascript">
+	    for (var i = 1; i < 6; i++) {
+     	document.write("<h3 class='post-title'><a href='#'>Sample post </a></h3><hr>");
+     	document.write("<p>Lorem ipsum dolor sit amet, laoreet omittam tacimates vis tepostea expetendis est, nibh summo putent mea et. Pri tale dicit regione ex, eiubique minimum, has an eius omittantur. Ex meliore mnesarchum assueverit nam. Tesoleat delenit.<br>Usu epicurei sensibus ea, est utinam maiorum persequeris inatqui nobis quaestio vel, vis suas liberavisse te. Eam ex solum mazim, sed cu vivcorpora invidunt. Ex quis ferri tincidunt mei. Per ut nemore pertinacia, in aeterno nam, vidisse detracto suscipiantur no sit. Ex reque senserit eam. Medeleniti patrioque dissentiet.</p><br>");
+     	document.write("<div class='post-readMore'><p><a href='#'>Read more...</a></p></div>");
+     	document.write("<div class='post-numberOfComments'><p>Comments: 0</p></div><br>");
+     }
+    </script>-->
+{% endblock %}

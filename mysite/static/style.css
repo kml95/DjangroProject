@@ -38,15 +38,16 @@ body {
 }
 
 
-.post-readMore {
-	float: left;
+.news-post {
+  margin-bottom: 60px;
 }
-
-.post-numberOfComments {
-	float: right;
+.news-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
 }
-
-.post-title {
+.news-post-meta {
+  margin-bottom: 20px;
+  color: #999;
 }
 
 

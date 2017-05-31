@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fitlife.apps.FitlifeConfig',
-    'loginuser.apps.LoginuserConfig'
+    'loginuser.apps.LoginuserConfig',
+    'news.apps.NewsConfig',
 ]
 
 MIDDLEWARE = [
