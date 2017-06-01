@@ -7,6 +7,8 @@ from .forms import LoginForm, RegisterForm
 import random, string
 from .models import UserConfirmation
 from .email_sender import send_confirmation_email
+from news.models import News, Category
+
 
 def login_view(request):
     if request.method == "POST":
@@ -49,8 +51,9 @@ def register_view(request):
     return render(request, 'loginuser/register.html', {'form':form})
 
 def logout_view(request):
+    news = News.objects.all().order_by('-posted_date')
     logout(request)
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'news': news})
 
 def confirm_view(request,username,code):
     user=User.objects.get(username=username)
