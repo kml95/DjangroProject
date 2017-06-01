@@ -3,6 +3,9 @@
 {% block title %}Diet plan generator{% endblock %}
 
 {% block content %}
+
+    {% if user.is_authenticated %} <!-- this page is only for registered users -->
+
     {% if is_counted%}
         Your daily kcal equals {{ kcal|floatformat:0 }} kcal.<br><br>
         Yours macronutrients:<br>
@@ -57,5 +60,9 @@
                 <input type="submit" value="Generate" class="btn btn-default">
             </div>
         </form>
+    {% endif %}
+
+    {% else %}
+    <p class="bg-info larger-padding">You have to register if you want to view contents of this page.</p>
     {% endif %}
 {% endblock %}

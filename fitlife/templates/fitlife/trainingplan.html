@@ -3,6 +3,9 @@
 {% block title %}Training plan generator{% endblock %}
 
 {% block content %}
+
+    {% if user.is_authenticated %} <!-- this page is only for registered users -->
+
     {% if trainingvalue %}
         {% if trainingvalue == 1 %}
 Trening 1 – Klatka Barki Triceps
@@ -168,4 +171,9 @@ Trening 1 – Klatka Barki Triceps
             </div>
         </form>
     {% endif %}
+
+    {% else %}
+    <p class="bg-info larger-padding">You have to register if you want to view contents of this page.</p>
+    {% endif %}
+
 {% endblock %}

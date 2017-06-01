@@ -19,6 +19,10 @@ body {
 	color: white;
 }
 
+.larger-padding {
+	padding: 10px;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
@@ -28,15 +32,9 @@ body {
 	width: 200px;
 }
 
-.navbar {
-	/*background-color: gray;*/
-}
-
-
 .sideBar {
 	background-color: white;
 }
-
 
 .news-post {
   margin-bottom: 60px;
@@ -49,7 +47,6 @@ body {
   margin-bottom: 20px;
   color: #999;
 }
-
 
 .footer {
 	min-height: 100px;
