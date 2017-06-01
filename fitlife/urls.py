@@ -14,4 +14,5 @@ urlpatterns = [
     url ('^products/$', views.products_view, name='products'),
     url('^dietplan/$', views.dietplan_view, name='dietplan'),
     url('^suplementation/$', views.suplementation_view, name='suplementation'),
+    url('^contact/$', views.contact_view, name='contact')
 ]

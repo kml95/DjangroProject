@@ -61,3 +61,8 @@ body {
 .footer-text {
 	color: white;
 }
+
+#map {
+	min-height: 300px;
+	width: 100%;
+}

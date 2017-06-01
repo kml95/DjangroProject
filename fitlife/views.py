@@ -268,3 +268,6 @@ def suplementation_view(request):
             return render(request, 'fitlife/suplementation.html', context)
     else:
         return render(request, 'fitlife/suplementation.html')
+
+def contact_view(request):
+    return render(request, 'fitlife/contact.html')
