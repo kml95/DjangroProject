@@ -4,35 +4,69 @@
 
 {% block content %}
     {% if suplementationvalue %}
-        {% if suplementationvalue == 1 %}
-   Suplementacja dzienna:
-   <br>- Creatine (monohydrat) before/after training 5g
-   <br>- Bcaa before/after training 5g
-   <br>- AAKG Before training 30min 4caps
-   <br>- Cytruline Before training mixed with AAKG 5caps
-   <br>- Witamins after wake up 1caps
-   <br>- Minerals before sleep 1caps
-   <br>- Protein whey after training 40g
-        {% elif suplementationvalue == 2 %}
-  <br> - Witamins after wake up 1caps
-  <br> - Minerals before sleep 1caps
-  <br> - Protein whey after training 40g
-  <br> - Creatine (monohydrat) before/after training 5g
-    {% endif %}
+   <h4>Daily sumplementation</h4><br /><br />
+   <table class="table">
+       <tbody><tr>
+           <td><h4>Name</h4></td>
+           <td><h4>Amount</h4></td>
+        </tr></tbody>
+        <tr>
+           <td>Creatine (monohydrat) before/after training</td>
+           <td>5g</td>
+        </tr>
+        {% if suplementationvalue == 1 %}        
+        <tr>
+           <td>BCAA before/after training</td>
+           <td>5g</td>
+        </tr>
+        <tr>
+           <td>AAKG 30 minutes before training</td>
+           <td>4 caps</td>
+        </tr>
+        <tr>
+           <td>Cytruline Before training mixed with AAKG</td>
+           <td>5 caps</td>
+        </tr>
+        {% endif %}
+        <tr>
+           <td>Witamins after waking up</td>
+           <td>1 cap</td>
+        </tr>
+        <tr>
+           <td>Minerals before going to bed</td>
+           <td>1 cap</td>
+        </tr>
+        <tr>
+           <td>Protein whey after training</td>
+           <td>40g</td>
+        </tr>
+   </table>
+
 <br>
-<br>
-    <form action="{% url 'fitlife:suplementation' %}" method="post">
+    <form action="{% url 'fitlife:suplementation' %}" method="post" class="form-horizontal">
         {% csrf_token %}
-        <input type="submit" name="count_again" value="Generate Again">
+        <div class="text-center">
+                <input type="submit" name="count_again" value="Generate Again" class="btn btn-default">
+            </div>
     </form>
     {% else %}
 
-    <form action="{% url 'fitlife:suplementation' %}" method="post" >
+    <form action="{% url 'fitlife:suplementation' %}" method="post" class="form-horizontal">
         {% csrf_token %}
-        Your experience:<br>
-        <input type="radio" name="experience" value="Beginner" > Begginer<br>
-        <input type="radio" name="experience" value="Professional"> Professional<br><br>
-        <input type="submit" value="Generate" checked="checked">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Your experience</label>
+            <div class="col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="radio" name="experience" value="Beginner" checked="checked"> Begginer<br />
+                        <input type="radio" name="experience" value="Professional"> Professional
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Generate" name="again" class="btn btn-default">
+        </div>
     </form>
     {% endif %}
 {% endblock %}

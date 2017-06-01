@@ -10,17 +10,29 @@
             {{ exercise.name }}<br>
         {% endfor %}
         <br>
-        <form action="{% url 'fitlife:training' %}" method="post">
+        <form action="{% url 'fitlife:training' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            <input type="submit" value="Generate again" name="again">
+            <div class="text-center">
+                <input type="submit" value="Generate again" name="again" class="btn btn-default">
+            </div>
         </form>
     {% else %}
-        <form action="{% url 'fitlife:training' %}" method="post">
+        <form action="{% url 'fitlife:training' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-            Sex:<br>
-            <input type="radio" name="sex" value="male"> Male<br>
-            <input type="radio" name="sex" value="female"> Female<br><br>
-            <input type="submit" value="Generate" >
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Sex</label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio" name="sex" value="male" checked="checked"> Male<br />
+                            <input type="radio" name="sex" value="female"> Female
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Generate" class="btn btn-default">
+            </div>
         </form>
     {% endif %}
 {% endblock %}
