@@ -219,5 +219,69 @@
       "name": "Standing Dumbbell Curl",
       "sex": "feemale"
     }
+  },
+  {
+    "model": "news.category",
+    "pk": 1,
+    "fields": {
+      "name": "General",
+      "slug": "general"
+    }
+  },
+  {
+    "model": "news.news",
+    "pk": 1,
+    "fields": {
+      "title": "Lorem ipsum",
+      "slug": "lorem-ipsum",
+      "text": "Lorem ipsum dolor sit amet, eam petentium periculis at. Lorem assum eu qui, eros facer similique ius ei. Te vis amet facilis laboramus, ceteros corrumpit no eos. Elit veritus te eam, et elitr oblique ancillae sea, ad sea populo utroque voluptua. Dolor suscipit no cum, et nobis qualisque est. Ei has commune democritum, diam elitr in duo, ut nibh nominavi nec.<br /> An eum cibo fastidii. Ad nam nostro option oporteat. Ei mea ignota consulatu, ex enim saepe mei, vim quod nonumes et. Suscipit invenire reformidans ut qui, augue repudiandae cu vim, commune temporibus voluptatibus no pro. Cum id paulo causae adolescens, clita affert lucilius mei ne. Et legere eirmod dissentias est, usu ne ridens recusabo comprehensam, in ius erat alienum. Vix in aliquid interesset, at postea vocibus lobortis duo.<br />Alia aperiri commune ne has, audire virtute pro id. Has altera pertinax ad, dicunt persius concludaturque sea et, everti honestatis sea cu. Inermis forensibus per ne, solum error delicatissimi cum id, at causae impedit epicurei vis. Aliquid efficiendi id sit, per id quem dicat. Mei numquam epicurei ea, ne per elitr aliquam fuisset.",
+      "posted_date": "2017-05-28T12:00:12.139Z",
+      "categories": [1]
+    }
+  },
+  {
+    "model": "news.news",
+    "pk": 2,
+    "fields": {
+      "title": "Figth of the titans",
+      "slug": "fight-of-the-titans",
+      "text": "Two strongest men - Jakub Nitkiewicz and Mariusz Pudzianowski - had finally an oportunity to participate in an event together. They were lifting for days. Many world records were beaten during those weeks. Unfortunately for Mariusz, he lost, 31:1. The only one competition he won was shopping bags lifting. He won because his oponennt was disqualified because he was eating from his shopping bags during competition.",
+      "posted_date": "2017-05-31T12:00:12.139Z",
+      "categories": [1]
+    }
+  },
+  {
+    "model": "news.news",
+    "pk": 3,
+    "fields": {
+      "title": "Some sample post from json file",
+      "slug": "the-news",
+      "text": "Viderer consequuntur sea an, eos mollis ullamcorper an, tollit aeterno gubergren vel et. Ne legimus inimicus ius. Novum volumus recusabo est te, ne qui modus prompta, vim appareat electram dissentiet at. Per tibique liberavisse cu.<br />Ne quis agam vim. Vel cu voluptua maiestatis. Ei discere admodum per. Has ei cetero scripserit reprehendunt, in sea malis aperiri.",
+      "posted_date": "2017-06-01T12:00:12.139Z",
+      "categories": [1]
+    }
+  },
+  {
+    "model": "news.news",
+    "pk": 1,
+    "fields": {
+      "title": "Lorem ipsum",
+      "slug": "lorem-ipsum",
+      "text": "Lorem ipsum dolor sit amet, eam petentium periculis at. Lorem assum eu qui, eros facer similique ius ei. Te vis amet facilis laboramus, ceteros corrumpit no eos. Elit veritus te eam, et elitr oblique ancillae sea, ad sea populo utroque voluptua. Dolor suscipit no cum, et nobis qualisque est. Ei has commune democritum, diam elitr in duo, ut nibh nominavi nec.<br /> An eum cibo fastidii. Ad nam nostro option oporteat. Ei mea ignota consulatu, ex enim saepe mei, vim quod nonumes et. Suscipit invenire reformidans ut qui, augue repudiandae cu vim, commune temporibus voluptatibus no pro. Cum id paulo causae adolescens, clita affert lucilius mei ne. Et legere eirmod dissentias est, usu ne ridens recusabo comprehensam, in ius erat alienum. Vix in aliquid interesset, at postea vocibus lobortis duo.<br />Alia aperiri commune ne has, audire virtute pro id. Has altera pertinax ad, dicunt persius concludaturque sea et, everti honestatis sea cu. Inermis forensibus per ne, solum error delicatissimi cum id, at causae impedit epicurei vis. Aliquid efficiendi id sit, per id quem dicat. Mei numquam epicurei ea, ne per elitr aliquam fuisset.",
+      "posted_date": "2017-05-28T12:00:12.139Z",
+      "categories": [1]
+    }
+  },
+  {
+    "model": "news.news",
+    "pk": 1,
+    "fields": {
+      "title": "Lorem ipsum",
+      "slug": "lorem-ipsum",
+      "text": "Lorem ipsum dolor sit amet, eam petentium periculis at. Lorem assum eu qui, eros facer similique ius ei. Te vis amet facilis laboramus, ceteros corrumpit no eos. Elit veritus te eam, et elitr oblique ancillae sea, ad sea populo utroque voluptua. Dolor suscipit no cum, et nobis qualisque est. Ei has commune democritum, diam elitr in duo, ut nibh nominavi nec.<br /> An eum cibo fastidii. Ad nam nostro option oporteat. Ei mea ignota consulatu, ex enim saepe mei, vim quod nonumes et. Suscipit invenire reformidans ut qui, augue repudiandae cu vim, commune temporibus voluptatibus no pro. Cum id paulo causae adolescens, clita affert lucilius mei ne. Et legere eirmod dissentias est, usu ne ridens recusabo comprehensam, in ius erat alienum. Vix in aliquid interesset, at postea vocibus lobortis duo.<br />Alia aperiri commune ne has, audire virtute pro id. Has altera pertinax ad, dicunt persius concludaturque sea et, everti honestatis sea cu. Inermis forensibus per ne, solum error delicatissimi cum id, at causae impedit epicurei vis. Aliquid efficiendi id sit, per id quem dicat. Mei numquam epicurei ea, ne per elitr aliquam fuisset.",
+      "posted_date": "2017-05-28T12:00:12.139Z",
+      "categories": [1]
+    }
   }
 ]
+

@@ -2,13 +2,13 @@
 
 SITE_ADDRESS= '127.0.0.1:8000'
 
-EMAIL_ADDRESS = 'a.szymanski.pb@gmail.com'
-EMAIL_PASSWORD = '123Tymczasowe'
+EMAIL_ADDRESS = 'kamil.tymczasowe@gmail.com'
+EMAIL_PASSWORD = 'Haslo123'
 
 EMAIL_SMTP = 'smtp.gmail.com'
 EMAIL_SMTP_PORT = 587
 
-EMAIL_SUBJECT = 'Potwierdzenie rejestracji - E-Wybory'
+EMAIL_SUBJECT = 'Potwierdzenie rejestracji - Fitlife'
 EMAIL_MESSAGE = """\
 <html>
   <head></head>
